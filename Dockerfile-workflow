@@ -1,11 +1,14 @@
 FROM toposoid/scala-base:2.12.12
 
 WORKDIR /app
-
+ARG TARGET_BRANCH
 ENV DEPLOYMENT=local
 
 RUN apt-get update \
 && apt-get -y install git \
-&& git clone https://github.com/toposoid/toposoid-deduction-protocol-model.git
+&& git clone https://github.com/toposoid/toposoid-deduction-protocol-model.git \
+&& cd toposoid-deduction-protocol-model \
+&& git fetch origin ${TARGET_BRANCH} \
+&& git checkout ${TARGET_BRANCH}
 
 
