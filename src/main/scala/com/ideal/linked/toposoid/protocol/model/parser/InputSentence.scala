@@ -16,6 +16,7 @@
 
 package com.ideal.linked.toposoid.protocol.model.parser
 
+import com.ideal.linked.toposoid.knowledgebase.regist.model.Knowledge
 import play.api.libs.json.Json
 
 /**
@@ -23,7 +24,7 @@ import play.api.libs.json.Json
  * @param premise List of sentence strings classified as premise
  * @param claim List of sentence strings classified as claim
  */
-case class InputSentence(premise:List[String], claim:List[String])
+case class InputSentence(premise:List[Knowledge], claim:List[Knowledge])
 object InputSentence {
   implicit val jsonWrites = Json.writes[InputSentence]
   implicit val jsonReads = Json.reads[InputSentence]
