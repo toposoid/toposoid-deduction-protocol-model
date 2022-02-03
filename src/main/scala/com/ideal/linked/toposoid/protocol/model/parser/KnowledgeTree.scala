@@ -22,30 +22,29 @@ import play.api.libs.json.{Json, Reads, __}
 /**
  * Data structure for expressing logical expressions with natural sentences as propositions
  */
-sealed trait FormulaTree
+sealed trait KnowledgeTree
 
 /**
- * A node in the FormulaTree
+ * A node in the KnowledgeTree
  * @param operator
- * @param formulaLeft
- * @param formulaRight
+ * @param knowledgeLeft
+ * @param knowledgeRight
  */
-case class FormulaNode(operator: String, formulaLeft: FormulaTree, formulaRight: FormulaTree) extends FormulaTree
-object FormulaNode {
-  implicit lazy val reader = Json.reads[FormulaNode]
+case class KnowledgeNode(operator: String, knowledgeLeft: KnowledgeTree, knowledgeRight: KnowledgeTree) extends KnowledgeTree
+object KnowledgeNode {
+  implicit lazy val reader = Json.reads[KnowledgeNode]
 }
 
 /**
- * A leaf in the FormulaTree
+ * A leaf in the KnowledgeTree
  * @param leaf
  */
-case class FormulaLeaf(leaf: KnowledgeSentenceSet) extends FormulaTree
-object FormulaLeaf {
-  implicit lazy val reader = Json.reads[FormulaLeaf]
+case class KnowledgeLeaf(leaf: KnowledgeSentenceSet) extends KnowledgeTree
+object KnowledgeLeaf {
+  implicit lazy val reader = Json.reads[KnowledgeLeaf]
 }
 
-object FormulaTree {
-  implicit lazy val treeReads: Reads[FormulaTree] =
-    __.lazyRead(FormulaNode.reader).map(x => x:FormulaTree) orElse __.lazyRead(FormulaLeaf.reader).map(x => x:FormulaTree)
+object KnowledgeTree {
+  implicit lazy val treeReads: Reads[KnowledgeTree] =
+    __.lazyRead(KnowledgeNode.reader).map(x => x:KnowledgeTree) orElse __.lazyRead(KnowledgeLeaf.reader).map(x => x:KnowledgeTree)
 }
-
