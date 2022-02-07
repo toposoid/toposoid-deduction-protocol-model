@@ -17,6 +17,7 @@ sbt publishLocal
 import com.ideal.linked.toposoid.protocol.model.parser._
 import com.ideal.linked.toposoid.protocol.model.neo4j._
 import com.ideal.linked.toposoid.protocol.model.parser._
+import com.ideal.linked.toposoid.protocol.model.sat._
 ```
 ## Note
 
