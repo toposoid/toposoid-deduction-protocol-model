@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.ideal.linked.toposoid.protocol.model.sat
 
 import com.ideal.linked.toposoid.protocol.model.base.DeductionResult
