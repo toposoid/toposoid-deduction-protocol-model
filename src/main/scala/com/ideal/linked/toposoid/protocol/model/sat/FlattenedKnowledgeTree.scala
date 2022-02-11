@@ -24,12 +24,10 @@ import play.api.libs.json.Json
  * @param satIdMap satIdMap Relationship between propositionId and ID used in SAT
  * @param formula formula formula
  * @param subFormulaMap subFormulaMap Relationship between leaf of a tree and sub-formula
- * @param deductionResults deductionResults True / false for each positionId inferred from GraphDB
  */
 case class FlattenedKnowledgeTree(satIdMap: Map[String, String],
                                   formula:String,
-                                  subFormulaMap:Map[String, String],
-                                  deductionResults: List[Map[String, DeductionResult]])
+                                  subFormulaMap:Map[String, String])
 object FlattenedKnowledgeTree {
   implicit val jsonWrites = Json.writes[FlattenedKnowledgeTree]
   implicit val jsonReads = Json.reads[FlattenedKnowledgeTree]
