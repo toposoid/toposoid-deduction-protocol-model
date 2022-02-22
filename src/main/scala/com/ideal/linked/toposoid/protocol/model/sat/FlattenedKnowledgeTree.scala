@@ -16,18 +16,14 @@
 
 package com.ideal.linked.toposoid.protocol.model.sat
 
-import com.ideal.linked.toposoid.protocol.model.base.DeductionResult
 import play.api.libs.json.Json
 
 /**
  *
- * @param satIdMap satIdMap Relationship between propositionId and ID used in SAT
  * @param formula formula formula
  * @param subFormulaMap subFormulaMap Relationship between leaf of a tree and sub-formula
  */
-case class FlattenedKnowledgeTree(satIdMap: Map[String, String],
-                                  formula:String,
-                                  subFormulaMap:Map[String, String])
+case class FlattenedKnowledgeTree(formula:String, subFormulaMap:Map[String, String])
 object FlattenedKnowledgeTree {
   implicit val jsonWrites = Json.writes[FlattenedKnowledgeTree]
   implicit val jsonReads = Json.reads[FlattenedKnowledgeTree]
