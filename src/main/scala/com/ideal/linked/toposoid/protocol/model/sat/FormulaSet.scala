@@ -20,11 +20,12 @@ import play.api.libs.json.Json
 
 /**
  *
- * @param regulation
- * @param hypothesis
+ * @param formula formula formula
+ * @param subFormulaMap subFormulaMap Relationship between leaf of a tree and sub-formula
  */
-case class FlattenedKnowledgeTree(regulation:FormulaSet, hypothesis:FormulaSet)
-object FlattenedKnowledgeTree {
-  implicit val jsonWrites = Json.writes[FlattenedKnowledgeTree]
-  implicit val jsonReads = Json.reads[FlattenedKnowledgeTree]
+case class FormulaSet(formula:String, subFormulaMap:Map[String, String])
+object FormulaSet {
+  implicit val jsonWrites = Json.writes[FormulaSet]
+  implicit val jsonReads = Json.reads[FormulaSet]
 }
+
