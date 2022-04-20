@@ -22,8 +22,9 @@ import play.api.libs.json.Json
  *
  * @param satResultMap
  * @param subFormulaResultMap
+ * @param status
  */
-case class SatSolverResult(satResultMap: Map[String, Boolean], subFormulaResultMap: Map[String, Boolean])
+case class SatSolverResult(satResultMap: Map[String, Boolean], subFormulaResultMap: Map[String, Boolean], status:String)
 object SatSolverResult {
   implicit val jsonWrites = Json.writes[SatSolverResult]
   implicit val jsonReads = Json.reads[SatSolverResult]
