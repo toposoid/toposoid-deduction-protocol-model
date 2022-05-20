@@ -14,7 +14,8 @@ sbt publishLocal
 
 ## Usage
 ```scala
-import com.ideal.linked.toposoid.protocol.model.parser._
+import com.ideal.linked.toposoid.protocol.model.base._
+import com.ideal.linked.toposoid.protocol.model.frontend._
 import com.ideal.linked.toposoid.protocol.model.neo4j._
 import com.ideal.linked.toposoid.protocol.model.parser._
 import com.ideal.linked.toposoid.protocol.model.sat._
