@@ -14,21 +14,20 @@
  * limitations under the License.
  */
 
-package com.ideal.linked.toposoid.protocol.model.base
+package com.ideal.linked.toposoid.protocol.model.parser
 
-import com.ideal.linked.toposoid.knowledgebase.model.{KnowledgeBaseEdge, KnowledgeBaseNode}
+import com.ideal.linked.toposoid.knowledgebase.regist.model.Knowledge
 import play.api.libs.json.Json
 
 /**
- *
- * @param nodeMap
- * @param edgeList
- * @param sentenceType
- * @param deductionResultMap
+ * Input of parser
+ * @param propositionId
+ * @param sentenceId
+ * @param knowledge
  */
-case class AnalyzedSentenceObject(nodeMap:Map[String, KnowledgeBaseNode], edgeList:List[KnowledgeBaseEdge], sentenceType:Int, sentenceId:String, lang:String, deductionResultMap:Map[String,DeductionResult])
-object AnalyzedSentenceObject {
-  implicit val jsonWrites = Json.writes[AnalyzedSentenceObject]
-  implicit val jsonReads = Json.reads[AnalyzedSentenceObject]
+case class KnowledgeForParser(propositionId:String, sentenceId:String, knowledge:Knowledge)
+object KnowledgeForParser {
+  implicit val jsonWrites = Json.writes[KnowledgeForParser]
+  implicit val jsonReads = Json.reads[KnowledgeForParser]
 }
 
