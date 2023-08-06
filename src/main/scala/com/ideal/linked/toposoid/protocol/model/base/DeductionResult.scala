@@ -16,7 +16,7 @@
 
 package com.ideal.linked.toposoid.protocol.model.base
 
-import play.api.libs.json.Json
+import play.api.libs.json.{Json, OWrites, Reads}
 
 /**
  * A model that stores the results of deductive reasoning.
@@ -26,6 +26,6 @@ import play.api.libs.json.Json
  */
 case class DeductionResult(status:Boolean, matchedPropositionIds:List[String], deductionUnit:String)
 object DeductionResult {
-  implicit val jsonWrites = Json.writes[DeductionResult]
-  implicit val jsonReads = Json.reads[DeductionResult]
+  implicit val jsonWrites: OWrites[DeductionResult] = Json.writes[DeductionResult]
+  implicit val jsonReads: Reads[DeductionResult] = Json.reads[DeductionResult]
 }
