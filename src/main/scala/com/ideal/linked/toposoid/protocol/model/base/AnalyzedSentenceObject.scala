@@ -16,7 +16,7 @@
 
 package com.ideal.linked.toposoid.protocol.model.base
 
-import com.ideal.linked.toposoid.knowledgebase.model.{KnowledgeBaseEdge, KnowledgeBaseNode}
+import com.ideal.linked.toposoid.knowledgebase.model.{KnowledgeBaseEdge, KnowledgeBaseNode, KnowledgeFeatureNode}
 import play.api.libs.json.Json
 
 /**
@@ -26,7 +26,7 @@ import play.api.libs.json.Json
  * @param sentenceType
  * @param deductionResultMap
  */
-case class AnalyzedSentenceObject(nodeMap:Map[String, KnowledgeBaseNode], edgeList:List[KnowledgeBaseEdge], sentenceType:Int, sentenceId:String, lang:String, deductionResultMap:Map[String,DeductionResult])
+case class AnalyzedSentenceObject(nodeMap:Map[String, KnowledgeBaseNode], edgeList:List[KnowledgeBaseEdge], knowledgeFeatureNode: KnowledgeFeatureNode, deductionResultMap:Map[String,DeductionResult])
 object AnalyzedSentenceObject {
   implicit val jsonWrites = Json.writes[AnalyzedSentenceObject]
   implicit val jsonReads = Json.reads[AnalyzedSentenceObject]
