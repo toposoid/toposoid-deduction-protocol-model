@@ -32,7 +32,7 @@ sealed trait KnowledgeTree
  */
 case class KnowledgeNode(operator: String, knowledgeLeft: KnowledgeTree, knowledgeRight: KnowledgeTree) extends KnowledgeTree
 object KnowledgeNode {
-  implicit lazy val reader = Json.reads[KnowledgeNode]
+  implicit lazy val reader: Reads[KnowledgeNode] = Json.reads[KnowledgeNode]
 }
 
 /**
@@ -41,7 +41,7 @@ object KnowledgeNode {
  */
 case class KnowledgeLeaf(leaf: KnowledgeSentenceSet) extends KnowledgeTree
 object KnowledgeLeaf {
-  implicit lazy val reader = Json.reads[KnowledgeLeaf]
+  implicit lazy val reader: Reads[KnowledgeLeaf] = Json.reads[KnowledgeLeaf]
 }
 
 object KnowledgeTree {

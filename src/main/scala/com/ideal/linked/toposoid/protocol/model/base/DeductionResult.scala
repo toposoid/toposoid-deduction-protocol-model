@@ -21,10 +21,10 @@ import play.api.libs.json.{Json, OWrites, Reads}
 /**
  * A model that stores the results of deductive reasoning.
  * @param status
- * @param matchedPropositionIds
+ * @param matchedPropositionInfoList
  * @param deductionUnit
  */
-case class DeductionResult(status:Boolean, matchedPropositionIds:List[String], deductionUnit:String)
+case class DeductionResult(status:Boolean, matchedPropositionInfoList:List[MatchedPropositionInfo], deductionUnit:String)
 object DeductionResult {
   implicit val jsonWrites: OWrites[DeductionResult] = Json.writes[DeductionResult]
   implicit val jsonReads: Reads[DeductionResult] = Json.reads[DeductionResult]

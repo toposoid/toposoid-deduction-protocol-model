@@ -17,7 +17,7 @@
 package com.ideal.linked.toposoid.protocol.model.neo4j
 
 import com.ideal.linked.toposoid.knowledgebase.model.{KnowledgeBaseEdge, KnowledgeBaseNode, KnowledgeBaseSynonymEdge, KnowledgeBaseSynonymNode, OtherElement}
-import play.api.libs.json.Json
+import play.api.libs.json.{Json, OWrites, Reads}
 
 /**
  * Knowledge graph database search results
@@ -33,7 +33,7 @@ case class Neo4jRecodeUnit(logicNode:KnowledgeBaseNode,
                            synonymEdge:KnowledgeBaseSynonymEdge,
                            otherElement:OtherElement)
 object Neo4jRecodeUnit {
-  implicit val jsonWrites = Json.writes[Neo4jRecodeUnit]
-  implicit val jsonReads = Json.reads[Neo4jRecodeUnit]
+  implicit val jsonWrites: OWrites[Neo4jRecodeUnit] = Json.writes[Neo4jRecodeUnit]
+  implicit val jsonReads: Reads[Neo4jRecodeUnit] = Json.reads[Neo4jRecodeUnit]
 }
 

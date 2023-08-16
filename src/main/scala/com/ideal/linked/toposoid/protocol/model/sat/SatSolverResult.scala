@@ -16,7 +16,7 @@
 
 package com.ideal.linked.toposoid.protocol.model.sat
 
-import play.api.libs.json.Json
+import play.api.libs.json.{Json, OWrites, Reads}
 
 /**
  *
@@ -26,7 +26,7 @@ import play.api.libs.json.Json
  */
 case class SatSolverResult(satResultMap: Map[String, Boolean], subFormulaResultMap: Map[String, Boolean], status:String)
 object SatSolverResult {
-  implicit val jsonWrites = Json.writes[SatSolverResult]
-  implicit val jsonReads = Json.reads[SatSolverResult]
+  implicit val jsonWrites: OWrites[SatSolverResult] = Json.writes[SatSolverResult]
+  implicit val jsonReads: Reads[SatSolverResult] = Json.reads[SatSolverResult]
 }
 
