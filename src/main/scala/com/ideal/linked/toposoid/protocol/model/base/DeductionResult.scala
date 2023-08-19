@@ -24,7 +24,7 @@ import play.api.libs.json.{Json, OWrites, Reads}
  * @param matchedPropositionInfoList
  * @param deductionUnit
  */
-case class DeductionResult(status:Boolean, matchedPropositionInfoList:List[MatchedPropositionInfo], deductionUnit:String)
+case class DeductionResult(status:Boolean, matchedPropositionInfoList:List[MatchedPropositionInfo], deductionUnit:String, havePremiseInGivenProposition:Boolean = false)
 object DeductionResult {
   implicit val jsonWrites: OWrites[DeductionResult] = Json.writes[DeductionResult]
   implicit val jsonReads: Reads[DeductionResult] = Json.reads[DeductionResult]
