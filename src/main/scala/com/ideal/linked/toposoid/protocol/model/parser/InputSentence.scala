@@ -17,7 +17,7 @@
 package com.ideal.linked.toposoid.protocol.model.parser
 
 import com.ideal.linked.toposoid.knowledgebase.regist.model.Knowledge
-import play.api.libs.json.Json
+import play.api.libs.json.{Json, OWrites, Reads}
 
 /**
  * Input information for deductive reasoning
@@ -26,7 +26,7 @@ import play.api.libs.json.Json
  */
 case class InputSentence(premise:List[Knowledge], claim:List[Knowledge])
 object InputSentence {
-  implicit val jsonWrites = Json.writes[InputSentence]
-  implicit val jsonReads = Json.reads[InputSentence]
+  implicit val jsonWrites: OWrites[InputSentence] = Json.writes[InputSentence]
+  implicit val jsonReads: Reads[InputSentence] = Json.reads[InputSentence]
 }
 

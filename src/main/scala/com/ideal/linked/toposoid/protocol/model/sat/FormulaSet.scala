@@ -16,7 +16,7 @@
 
 package com.ideal.linked.toposoid.protocol.model.sat
 
-import play.api.libs.json.Json
+import play.api.libs.json.{Json, OWrites, Reads}
 
 /**
  *
@@ -25,7 +25,7 @@ import play.api.libs.json.Json
  */
 case class FormulaSet(formula:String, subFormulaMap:Map[String, String])
 object FormulaSet {
-  implicit val jsonWrites = Json.writes[FormulaSet]
-  implicit val jsonReads = Json.reads[FormulaSet]
+  implicit val jsonWrites: OWrites[FormulaSet] = Json.writes[FormulaSet]
+  implicit val jsonReads: Reads[FormulaSet] = Json.reads[FormulaSet]
 }
 
