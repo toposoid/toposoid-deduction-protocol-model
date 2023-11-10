@@ -16,21 +16,25 @@
 
 package com.ideal.linked.toposoid.protocol.model.neo4j
 
-import com.ideal.linked.toposoid.knowledgebase.model.{KnowledgeBaseEdge, KnowledgeBaseNode, KnowledgeBaseSynonymEdge, KnowledgeBaseSynonymNode, OtherElement}
+import com.ideal.linked.toposoid.knowledgebase.model.{KnowledgeBaseEdge, KnowledgeBaseNode, KnowledgeBaseSynonymEdge, KnowledgeBaseSynonymNode, KnowledgeFeatureReference, KnowledgeFeatureReferenceEdge, OtherElement}
 import play.api.libs.json.{Json, OWrites, Reads}
 
 /**
- * Knowledge graph database search results
+ *
  * @param logicNode com.ideal.linked.toposoid.knowledgebase.model.KnowledgeBaseNode
  * @param logicEdge com.ideal.linked.toposoid.knowledgebase.model.KnowledgeBaseEdge
  * @param synonymNode com.ideal.linked.toposoid.knowledgebase.model.KnowledgeBaseSynonymNode
  * @param synonymEdge com.ideal.linked.toposoid.knowledgebase.model.KnowledgeBaseSynonymEdge
+ * @param featureNode com.ideal.linked.toposoid.knowledgebase.model.KnowledgeFeatureReference
+ * @param featureEdge com.ideal.linked.toposoid.knowledgebase.model.KnowledgeFeatureReferenceEdge
  * @param otherElement com.ideal.linked.toposoid.knowledgebase.model.OtherElement
  */
 case class Neo4jRecodeUnit(logicNode:KnowledgeBaseNode,
                            logicEdge:KnowledgeBaseEdge,
                            synonymNode:KnowledgeBaseSynonymNode,
                            synonymEdge:KnowledgeBaseSynonymEdge,
+                           featureNode:KnowledgeFeatureReference,
+                           featureEdge:KnowledgeFeatureReferenceEdge,
                            otherElement:OtherElement)
 object Neo4jRecodeUnit {
   implicit val jsonWrites: OWrites[Neo4jRecodeUnit] = Json.writes[Neo4jRecodeUnit]
