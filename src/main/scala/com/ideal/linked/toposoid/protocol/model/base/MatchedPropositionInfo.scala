@@ -23,7 +23,7 @@ import play.api.libs.json.{Json, OWrites, Reads}
  * @param propositionId
  * @param featureInfoList
  */
-case class MatchedPropositionInfo(propositionId:String, featureInfoList:List[MatchedFeatureInfo])
+case class MatchedPropositionInfo(propositionId:String, sentenceId:String, featureInfoList:List[MatchedFeatureInfo])
 
 object MatchedPropositionInfo {
   implicit val jsonWrites: OWrites[MatchedPropositionInfo] = Json.writes[MatchedPropositionInfo]
