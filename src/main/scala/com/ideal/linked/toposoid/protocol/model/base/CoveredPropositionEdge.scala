@@ -14,18 +14,17 @@
  * limitations under the License.
  */
 
-package com.ideal.linked.toposoid.protocol.model.neo4j
+package com.ideal.linked.toposoid.protocol.model.base
 
 import play.api.libs.json.{Json, OWrites, Reads}
 
 /**
- * For search of knowledge graph
- * @param query　Query string issued when each deductive inference logic references the knowledge graph
- * @param target　Knowledge graph database name.
+ *
+ * @param sourceNode
+ * @param destinationNode
  */
-case class CypherQuery(query:String, target:String)
-object CypherQuery{
-  implicit val jsonWrites: OWrites[CypherQuery] = Json.writes[CypherQuery]
-  implicit val jsonReads: Reads[CypherQuery] = Json.reads[CypherQuery]
+case class CoveredPropositionEdge(sourceNode:CoveredPropositionNode, destinationNode:CoveredPropositionNode)
+object CoveredPropositionEdge {
+  implicit val jsonWrites: OWrites[CoveredPropositionEdge] = Json.writes[CoveredPropositionEdge]
+  implicit val jsonReads: Reads[CoveredPropositionEdge] = Json.reads[CoveredPropositionEdge]
 }
-

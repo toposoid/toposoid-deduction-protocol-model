@@ -16,7 +16,7 @@
 
 package com.ideal.linked.toposoid.protocol.model.parser
 
-import play.api.libs.json.Json
+import play.api.libs.json.{Json, OWrites, Reads}
 
 /**
  * Input of parser
@@ -25,7 +25,7 @@ import play.api.libs.json.Json
  */
 case class InputSentenceForParser(premise:List[KnowledgeForParser], claim:List[KnowledgeForParser])
 object InputSentenceForParser {
-  implicit val jsonWrites = Json.writes[InputSentenceForParser]
-  implicit val jsonReads = Json.reads[InputSentenceForParser]
+  implicit val jsonWrites: OWrites[InputSentenceForParser] = Json.writes[InputSentenceForParser]
+  implicit val jsonReads: Reads[InputSentenceForParser] = Json.reads[InputSentenceForParser]
 }
 
