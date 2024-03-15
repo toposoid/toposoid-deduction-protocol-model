@@ -1,14 +1,14 @@
 import Dependencies._
 
 ThisBuild / scalaVersion     := "2.13.11"
-ThisBuild / version          := "0.5"
+ThisBuild / version          := "0.6-SNAPSHOT"
 ThisBuild / organization     := "com.ideal.linked"
 
 lazy val root = (project in file("."))
   .settings(
     name := "toposoid-deduction-protocol-model",
     libraryDependencies += "com.typesafe.play" %% "play" % "2.8.18",
-    libraryDependencies += "com.ideal.linked" %% "toposoid-knowledgebase-model" % "0.5",
+    libraryDependencies += "com.ideal.linked" %% "toposoid-knowledgebase-model" % "0.6-SNAPSHOT",
     libraryDependencies += scalaTest % Test
   )
   .enablePlugins(AutomateHeaderPlugin)

@@ -1,5 +1,5 @@
 version: '3'
 services:
   toposoid-deduction-protocol-model:
-    image: toposoid-deduction-protocol-model:0.5
+    image: toposoid-deduction-protocol-model:0.6-SNAPSHOT
     tty: true
