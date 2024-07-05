@@ -16,7 +16,6 @@
 
 package com.ideal.linked.toposoid.protocol.model.parser
 
-import com.ideal.linked.toposoid.knowledgebase.state.model.TransversalState
 import play.api.libs.json.{Json, OWrites, Reads}
 
 /**
@@ -24,7 +23,7 @@ import play.api.libs.json.{Json, OWrites, Reads}
  * @param premise List of sentence strings and ids classified as premise
  * @param claim List of sentence strings and ids classified as claim
  */
-case class InputSentenceForParser(premise:List[KnowledgeForParser], claim:List[KnowledgeForParser], transversalState:TransversalState)
+case class InputSentenceForParser(premise:List[KnowledgeForParser], claim:List[KnowledgeForParser])
 object InputSentenceForParser {
   implicit val jsonWrites: OWrites[InputSentenceForParser] = Json.writes[InputSentenceForParser]
   implicit val jsonReads: Reads[InputSentenceForParser] = Json.reads[InputSentenceForParser]
