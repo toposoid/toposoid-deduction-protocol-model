@@ -26,7 +26,7 @@ import play.api.libs.json.{Json, OWrites, Reads}
  * @param sentenceId
  * @param knowledge
  */
-case class KnowledgeForParser(propositionId:String, sentenceId:String, knowledge:Knowledge, transversalState:TransversalState)
+case class KnowledgeForParser(propositionId:String, sentenceId:String, knowledge:Knowledge)
 object KnowledgeForParser {
   implicit val jsonWrites: OWrites[KnowledgeForParser] = Json.writes[KnowledgeForParser]
   implicit val jsonReads: Reads[KnowledgeForParser] = Json.reads[KnowledgeForParser]
