@@ -17,7 +17,6 @@
 package com.ideal.linked.toposoid.protocol.model.parser
 
 import com.ideal.linked.toposoid.knowledgebase.regist.model.Knowledge
-import com.ideal.linked.toposoid.knowledgebase.state.model.TransversalState
 import play.api.libs.json.{Json, OWrites, Reads}
 
 /**
