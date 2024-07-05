@@ -16,6 +16,7 @@
 
 package com.ideal.linked.toposoid.protocol.model.neo4j
 
+import com.ideal.linked.toposoid.knowledgebase.state.model.TransversalState
 import play.api.libs.json.{Json, OWrites, Reads}
 
 /**
@@ -23,7 +24,7 @@ import play.api.libs.json.{Json, OWrites, Reads}
  * @param query　Query string issued when each deductive inference logic references the knowledge graph
  * @param target　Knowledge graph database name.
  */
-case class CypherQuery(query:String, target:String)
+case class CypherQuery(query:String, target:String, transversalState:TransversalState)
 object CypherQuery{
   implicit val jsonWrites: OWrites[CypherQuery] = Json.writes[CypherQuery]
   implicit val jsonReads: Reads[CypherQuery] = Json.reads[CypherQuery]
