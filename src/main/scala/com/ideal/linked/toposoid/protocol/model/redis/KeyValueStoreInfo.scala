@@ -18,8 +18,8 @@ package com.ideal.linked.toposoid.protocol.model.redis
 
 import play.api.libs.json.{Json, OWrites, Reads}
 
-case class UserInfo(user:String, key:String, value:String)
+case class KeyValueStoreInfo(identifier:String, key:String, value:String)
 object UserInfo{
-  implicit val jsonWrites: OWrites[UserInfo] = Json.writes[UserInfo]
-  implicit val jsonReads: Reads[UserInfo] = Json.reads[UserInfo]
+  implicit val jsonWrites: OWrites[KeyValueStoreInfo] = Json.writes[KeyValueStoreInfo]
+  implicit val jsonReads: Reads[KeyValueStoreInfo] = Json.reads[KeyValueStoreInfo]
 }
