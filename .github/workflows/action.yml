@@ -10,7 +10,7 @@ env:
   PJ_BRANCH: feature
   PJ_VERSION: 0.6-SNAPSHOT
 jobs:
-  header-check_toposoid-deduction-protocol-modelj:
+  header-check_toposoid-deduction-protocol-model:
     runs-on: ubuntu-latest
     steps:
       - name: Clone ${{ env.PJ_REPO }}
@@ -22,9 +22,9 @@ jobs:
             cd ${GITHUB_WORKSPACE} && cd ../
             cd ./${{ env.PJ_REPO }}
             docker build --build-arg TARGET_BRANCH=${{ env.PJ_BRANCH }} --tag ${{ env.PJ_REPO }}:${{ env.PJ_VERSION }} -f Dockerfile-workflow .
-            docker-compose -f docker-compose-workflow.yml up -d
-            docker-compose -f docker-compose-workflow.yml exec -T ${{ env.PJ_REPO }} bash -c "cd ${{ env.PJ_REPO }} && sbt headerCheck"
-            docker-compose -f docker-compose-workflow.yml exec -T ${{ env.PJ_REPO }} bash -c "cd ${{ env.PJ_REPO }} && sbt compile"
+            docker compose -f docker-compose-workflow.yml up -d
+            docker compose -f docker-compose-workflow.yml exec -T ${{ env.PJ_REPO }} bash -c "cd ${{ env.PJ_REPO }} && sbt headerCheck"
+            docker compose -f docker-compose-workflow.yml exec -T ${{ env.PJ_REPO }} bash -c "cd ${{ env.PJ_REPO }} && sbt compile"
       - name: Clone toposoid-scala-lib
         uses: actions/checkout@v3
         with:
