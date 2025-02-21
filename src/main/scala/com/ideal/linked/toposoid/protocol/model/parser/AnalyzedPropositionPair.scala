@@ -18,7 +18,7 @@ package com.ideal.linked.toposoid.protocol.model.parser
 import com.ideal.linked.toposoid.protocol.model.base.AnalyzedSentenceObjects
 import play.api.libs.json.{Json, OWrites, Reads}
 
-case class AnalyzedPropositionPair(analyzedSentenceObjects: AnalyzedSentenceObjects ,KnowledgeForParser: KnowledgeForParser)
+case class AnalyzedPropositionPair(analyzedSentenceObjects: AnalyzedSentenceObjects ,knowledgeForParser: KnowledgeForParser)
 
 object AnalyzedPropositionPair {
   implicit val jsonWrites: OWrites[AnalyzedPropositionPair] = Json.writes[AnalyzedPropositionPair]
