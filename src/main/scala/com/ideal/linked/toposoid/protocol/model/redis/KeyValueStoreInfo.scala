@@ -15,16 +15,12 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package com.ideal.linked.toposoid.protocol.model.frontend
+package com.ideal.linked.toposoid.protocol.model.redis
 
 import play.api.libs.json.{Json, OWrites, Reads}
 
-/**
- *
- * @param analyzedEdges
- */
-case class AnalyzedEdges(analyzedEdges:List[AnalyzedEdge])
-object AnalyzedEdges {
-  implicit val jsonWrites: OWrites[AnalyzedEdges] = Json.writes[AnalyzedEdges]
-  implicit val jsonReads: Reads[AnalyzedEdges] = Json.reads[AnalyzedEdges]
+case class KeyValueStoreInfo(identifier:String, key:String, value:String)
+object KeyValueStoreInfo{
+  implicit val jsonWrites: OWrites[KeyValueStoreInfo] = Json.writes[KeyValueStoreInfo]
+  implicit val jsonReads: Reads[KeyValueStoreInfo] = Json.reads[KeyValueStoreInfo]
 }

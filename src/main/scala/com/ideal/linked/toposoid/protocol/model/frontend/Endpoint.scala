@@ -17,14 +17,10 @@
 
 package com.ideal.linked.toposoid.protocol.model.frontend
 
-import play.api.libs.json.{Json, OWrites, Reads}
+import play.api.libs.json.Json
 
-/**
- *
- * @param analyzedEdges
- */
-case class AnalyzedEdges(analyzedEdges:List[AnalyzedEdge])
-object AnalyzedEdges {
-  implicit val jsonWrites: OWrites[AnalyzedEdges] = Json.writes[AnalyzedEdges]
-  implicit val jsonReads: Reads[AnalyzedEdges] = Json.reads[AnalyzedEdges]
+case class Endpoint(host:String, port:String, name:String)
+object Endpoint {
+  implicit val jsonWrites = Json.writes[Endpoint]
+  implicit val jsonReads = Json.reads[Endpoint]
 }
