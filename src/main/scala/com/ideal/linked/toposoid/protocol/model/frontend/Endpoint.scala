@@ -17,10 +17,10 @@
 
 package com.ideal.linked.toposoid.protocol.model.frontend
 
-import play.api.libs.json.Json
+import play.api.libs.json.{Json, OWrites, Reads}
 
 case class Endpoint(host:String, port:String, name:String)
 object Endpoint {
-  implicit val jsonWrites = Json.writes[Endpoint]
-  implicit val jsonReads = Json.reads[Endpoint]
+  implicit val jsonWrites: OWrites[Endpoint] = Json.writes[Endpoint]
+  implicit val jsonReads:Reads[Endpoint] = Json.reads[Endpoint]
 }
