@@ -6,7 +6,7 @@ Especially these are used in deductive logic.
 [![Header Check](https://github.com/toposoid/toposoid-deduction-protocol-model/actions/workflows/action.yml/badge.svg)](https://github.com/toposoid/toposoid-deduction-protocol-model/actions/workflows/action.yml)
 
 ## Requirements
-Scala version 2.13.x,   
+Scala version 3.3.6,   
 Sbt version 1.9.0
 
 ## Setup
