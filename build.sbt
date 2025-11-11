@@ -8,7 +8,7 @@ ThisBuild / organization     := "com.ideal.linked"
 lazy val root = (project in file("."))
   .settings(
     name := "toposoid-deduction-protocol-model",
-    libraryDependencies += "org.playframework" %% "play" % "3.0.9",
+    libraryDependencies += "org.playframework" %% "play" % "3.0.7",
     libraryDependencies += "com.ideal.linked" %% "toposoid-knowledgebase-model" % "0.7-SNAPSHOT",
     libraryDependencies += scalaTest % Test
   )
