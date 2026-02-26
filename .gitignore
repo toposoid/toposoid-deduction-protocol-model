@@ -7,4 +7,10 @@ project/target/
 .bsp/
 .metals/
 .vscode/
-
+docker-compose-dev.yml
+.devcontainer
+.metals
+.vscode
+project/project
+metals.sbt
+.bloop
