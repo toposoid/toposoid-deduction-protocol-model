@@ -27,7 +27,7 @@ import play.api.libs.json.{Json, OWrites, Reads}
  *　　　　　　　　　　　　　　　　　　　　　　　This parameter will be True only if the proposition has a Premise and
  *                                      there is a corresponding Claim in Knowledgebase that is related to the Proposition's Premise.
  */
-case class DeductionResult(status:Boolean, authenticity:Int, coveredPropositionResults:List[CoveredPropositionResult], havePremiseInGivenProposition:Boolean = false, deductionPhaseType:Int = 1)
+case class DeductionResult(status:Boolean, authenticityType:Int, coveredPropositionResults:List[CoveredPropositionResult], havePremiseInGivenProposition:Boolean = false, deductionPhaseType:Int = 1)
 object DeductionResult {
   implicit val jsonWrites: OWrites[DeductionResult] = Json.writes[DeductionResult]
   implicit val jsonReads: Reads[DeductionResult] = Json.reads[DeductionResult]
