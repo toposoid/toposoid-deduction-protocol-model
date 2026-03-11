@@ -1,4 +1,3 @@
-import Dependencies._
 import de.heikoseeberger.sbtheader.License
 
 ThisBuild / scalaVersion     := "3.3.6"
@@ -8,9 +7,8 @@ ThisBuild / organization     := "com.ideal.linked"
 lazy val root = (project in file("."))
   .settings(
     name := "toposoid-deduction-protocol-model",
-    libraryDependencies += "org.playframework" %% "play" % "3.0.7",
-    libraryDependencies += "com.ideal.linked" %% "toposoid-knowledgebase-model" % "0.7-SNAPSHOT",
-    libraryDependencies += scalaTest % Test
+    libraryDependencies += "org.playframework" %% "play" % "3.0.7" exclude("org.slf4j","slf4j-api"),
+    libraryDependencies += "com.ideal.linked" %% "toposoid-knowledgebase-model" % "0.7-SNAPSHOT" exclude("org.slf4j","slf4j-api")
   )
   .enablePlugins(AutomateHeaderPlugin)
 
