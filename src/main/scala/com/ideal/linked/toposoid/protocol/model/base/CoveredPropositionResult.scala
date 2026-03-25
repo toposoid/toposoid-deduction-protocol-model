@@ -27,7 +27,7 @@ import play.api.libs.json.{Json, OWrites, Reads}
  * @param coveredPropositionEdges
  */
 //case class CoveredPropositionResult(deductionUnit:String, propositionId:String, sentenceId:String, coveredPropositionEdges:List[CoveredPropositionEdge], knowledgeBaseSideInfoList:List[KnowledgeBaseSideInfo])
-case class CoveredPropositionResult(deductionUnit:String, propositionId:String, sentenceId:String, coveredPropositionEdges:List[CoveredPropositionEdge])
+case class CoveredPropositionResult(propositionId:String, sentenceId:String, coveredPropositionEdges:List[CoveredPropositionEdge])
 object CoveredPropositionResult {
   implicit val jsonWrites: OWrites[CoveredPropositionResult] = Json.writes[CoveredPropositionResult]
   implicit val jsonReads: Reads[CoveredPropositionResult] = Json.reads[CoveredPropositionResult]
