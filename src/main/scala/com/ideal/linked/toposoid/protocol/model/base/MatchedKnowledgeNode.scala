@@ -19,7 +19,7 @@ package com.ideal.linked.toposoid.protocol.model.base
 
 import play.api.libs.json.{Json, OWrites, Reads}
 
-case class MatchedKnowledgeNode(sentenceId:String, nodeId:String, caseNameOnEdge:String, isDenialWord:Boolean, nodeType: Int)
+case class MatchedKnowledgeNode(propositionId:String, sentenceId:String, nodeId:String, caseNameOnEdge:String, isDenialWord:Boolean, nodeType: Int, featureInfoList:List[MatchedFeatureInfo], deductionUnit:String)
 
 object MatchedKnowledgeNode {
   implicit val jsonWrites: OWrites[MatchedKnowledgeNode] = Json.writes[MatchedKnowledgeNode]
