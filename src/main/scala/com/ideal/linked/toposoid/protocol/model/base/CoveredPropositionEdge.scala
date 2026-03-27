@@ -27,7 +27,7 @@ import play.api.libs.json.{Json, OWrites, Reads}
 //
 
 //case class CoveredPropositionEdge(sourceNode:CoveredPropositionNode, destinationNode:CoveredPropositionNode)
-case class CoveredPropositionEdge(sourceNode:CoveredPropositionNode, destinationNode:CoveredPropositionNode, knowledgeBaseSideInfoList:List[KnowledgeBaseSideInfo])
+case class CoveredPropositionEdge(sourceNode:CoveredPropositionNode, destinationNode:CoveredPropositionNode)
 object CoveredPropositionEdge {
   implicit val jsonWrites: OWrites[CoveredPropositionEdge] = Json.writes[CoveredPropositionEdge]
   implicit val jsonReads: Reads[CoveredPropositionEdge] = Json.reads[CoveredPropositionEdge]
