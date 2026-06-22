@@ -24,7 +24,7 @@ import play.api.libs.json.{Json, OWrites, Reads}
  * @param featureId
  * @param similarity
  */
-case class MatchedFeatureInfo(featureId:String, similarity:Float)
+case class MatchedFeatureInfo(featureId:String, featureType:Int, similarity:Float)
 
 object MatchedFeatureInfo {
   implicit val jsonWrites: OWrites[MatchedFeatureInfo] = Json.writes[MatchedFeatureInfo]

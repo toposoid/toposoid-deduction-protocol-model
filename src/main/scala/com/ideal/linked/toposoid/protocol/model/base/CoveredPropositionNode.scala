@@ -25,7 +25,7 @@ import play.api.libs.json.{Json, OWrites, Reads}
  * @param propositionCurrentId
  * @param surface
  */
-case class CoveredPropositionNode(terminalId:String, terminalSurface:String, terminalUrl:String, matchedKnowledgeNodes:List[MatchedKnowledgeNode], isConfirmed:Boolean, deductionUnit:String)
+case class CoveredPropositionNode(terminalId:String, terminalSurface:String, terminalUrl:String, matchedKnowledgeNodes:List[MatchedKnowledgeNode], isConfirmed:Boolean)
 object CoveredPropositionNode {
   implicit val jsonWrites: OWrites[CoveredPropositionNode] = Json.writes[CoveredPropositionNode]
   implicit val jsonReads: Reads[CoveredPropositionNode] = Json.reads[CoveredPropositionNode]
