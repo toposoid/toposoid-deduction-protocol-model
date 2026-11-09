@@ -21,11 +21,9 @@ import play.api.libs.json.{Json, OWrites, Reads}
 
 /**
   * 
-  * @param status
   * @param authenticityType ref. com.ideal.linked.toposoid.common.AuthenticityType
   * @param coveredPropositionResults
   * @param evidenceKnowledgeList 
-  * @param havePremiseInGivenProposition parameter is valid only when SentenceType is Claim. This parameter will be True only if the proposition has a Premise and there is a corresponding Claim in Knowledgebase that is related to the Proposition's Premise.
   * @param deductionPhaseType ref. com.ideal.linked.toposoid.common.DeductionPhaseType
   * 
   */
