@@ -17,6 +17,7 @@
 
 package com.ideal.linked.toposoid.protocol.model.frontend
 
+import com.ideal.linked.toposoid.protocol.model.base.KnowledgeBaseSideInfo
 import play.api.libs.json.{Json, OWrites, Reads}
 
 /**
